@@ -1,0 +1,46 @@
+<template>
+  <div id="app-content">
+   	<v-header></v-header>
+    <div class="tab">
+    	<div>
+    		<router-link to="/goods">商品</router-link>
+    	</div>
+    	<div>
+    		<router-link to="/ratings">评论</router-link>
+    	</div>
+    	<div>
+    		<router-link to="/seller">商家</router-link>
+    	</div>
+    </div>
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+	import header from './components/header/header.vue';
+	export default {
+		components:{
+			'v-header':header
+		}
+	};
+</script>
+<style lang="stylus" rel="stylesheet/stylus">
+	*
+		margin:0
+		padding:0
+		font-family:'微软雅黑'
+	.tab
+		display:flex
+		height:40px
+		line-height:40px
+		div
+			flex:1
+			text-align:center
+			& > a
+				display:block
+				text-decoration:none
+				font-size:14px
+				color:rgb(77,85,93)
+				&.active
+					color:rgb(240,20,20)
+</style>
