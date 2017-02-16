@@ -2,12 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 import App from './App';
 import Goods from 'components/goods/goods';
 import Ratings from 'components/ratings/ratings';
 import Seller from 'components/seller/seller';
 
 Vue.use(VueRouter);
+Vue.use(VueResource);
 
 const routers = [
 	{
@@ -37,4 +39,3 @@ new Vue({
 	router:router
 });
 router.push('/goods');
-
