@@ -37,4 +37,3 @@ new Vue({
 	router:router
 });
 router.push('/goods');
-

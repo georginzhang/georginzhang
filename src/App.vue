@@ -13,10 +13,10 @@
     	</div>
     </div>
     <router-view></router-view>
-  </div>
+    <div class="content">content</div>
+	</div>
 </template>
-
-<script>
+<script type="text/ecmascript-6">
 	import header from './components/header/header.vue';
 	export default {
 		components:{
@@ -43,4 +43,5 @@
 				color:rgb(77,85,93)
 				&.active
 					color:rgb(240,20,20)
+
 </style>
