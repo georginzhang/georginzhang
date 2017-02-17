@@ -13,11 +13,20 @@
 				<div class="support-content" v-if="seller.supports">
 					<span class="icon" :class="classArr[seller.supports[0].type]"></span>
 					<span class="icon-text">{{seller.supports[0].description}}</span>
-					<span class="tips-txt">{{seller.supports.length}} 个</span>
+					<span class="tips-txt" @click="showDetail">{{seller.supports.length}} 个 ＞</span>
 				</div>
 			</div>
 		</div>
 		<div class="brand-tips"></div>
+		<div class="bg-seller">
+			<img :src="seller.avatar">
+		</div>
+		<div v-show="showFlag" class="detail">
+			<div class="detail-wrapper clearfix">
+				<div class="detail-main">{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}}{{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} {{seller.description}} / {{seller.deliveryTime}} </div>
+			</div>
+			<div class="detail-fotter">X</div>
+		</div>
 	</div>	
 </template>
 
@@ -26,7 +35,13 @@
 		props:['seller'],
 		data () {
 			return {
-				classArr:['decrease','discount','special','invoice','guarantee']
+				classArr:['decrease','discount','special','invoice','guarantee'],
+				showFlag:false
+			}
+		},
+		methods:{
+			showDetail:function(){
+				this.showFlag = true;
 			}
 		}
 
@@ -38,15 +53,17 @@
 	*
 		margin:0
 		padding:0
+	.header
+		position:relative
 	.brand-content
 		padding:25px 15px 15px 22px
 		position:relative
 	.brand-pic
-		display:inline-block;
+		display:inline-block
 		img
 			width:64px
 			height:64px
-			border-radius:4px;
+			border-radius:4px
 	.brand-txt
 		display:inline-block
 		vertical-align:top
@@ -69,7 +86,7 @@
 		font-weight:200px
 		vertical-align:top
 	.header
-		background-color:rgba(0,0,0,0.7)
+		background-color:rgba(0,0,0,0.3)
 		color:#fff
 		font-size:13px
 	.icon
@@ -96,4 +113,36 @@
 		position:absolute
 		right:25px
 		bottom:18px
+	.bg-seller
+		position:absolute
+		top:0
+		left:0
+		width:100%
+		height:100%
+		z-index:-1
+		img
+			width:100%
+			height:100%
+			filter:blur(4px)
+	.detail
+		position:fixed
+		top:0
+		left:0
+		z-index:100
+		width:100%
+		height:100%
+		background:rgba(7,17,27,0.8)
+		overflow:auto
+	.detail-wrapper
+		min-height:100%
+		.detail-main
+			overflow:auto
+			padding-bottom:64px
+	.detail-fotter
+		margin-top:-32px
+		position:relative
+		color:#fff
+		text-align:center
+		clear:both
+		height:32px
 </style>
