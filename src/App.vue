@@ -13,7 +13,6 @@
     	</div>
     </div>
     <router-view></router-view>
-    <div class="content">content</div>
 	</div>
 </template>
 <script type="text/ecmascript-6">
