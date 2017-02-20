@@ -21,6 +21,7 @@
 			},
 			increase(event){
 				let food = this.food;
+				alert(food.count)
 				if(!event._constructed){
 					return ;
 				}

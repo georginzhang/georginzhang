@@ -1,6 +1,6 @@
 <template>
 	<div class="shopcart-content">
-		<div class="content-left">
+		<div class="content-left" @click.stop="toggelshow">
 			<div class="logo-wrap">
 				<div class="logo" :class="{'highlight':totalCount>0}">
 					<span class="totalCount" v-show="totalCount > 0">{{totalCount}}</span>
@@ -13,12 +13,34 @@
 		<div class="content-right" :class="{'highlight':this.totalMoney >= this.seller.minPrice}">
 			{{minPrice}}
 		</div>
+		<div class="shopLists" v-show="listshow" ref="listcontent">
+			<div>
+				<div class="list-title">
+					<span class="list-left">购物车</span>
+					<span class="list-right">清空</span>
+				</div>
+				<div v-for="good in selectArr">
+					<div class="lists-content" >
+						<div>{{good.name}}</div>
+						<div>￥{{good.count*good.price}}</div>
+						<controlcart :food="good"></controlcart>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script type="text/ecmascript-6">
+	import controlcart from 'components/controlcart/controlcart'
+	import BScroll from 'better-scroll';
 	export default {
 		props:['seller','select-arr'],
+		data(){
+			return {
+				showen:false
+			}
+		},
 		computed:{
 			totalMoney(){
 				let totalCash = 0;
@@ -47,6 +69,21 @@
 					let diff = minprice - totalMoney
 					return `还差${diff}元配送`;
 				}
+			},
+			listshow(){
+				let show1 = (this.totalCount > 0);
+				this.$nextTick(()=>{
+					this.scroll = new BScroll(this.$refs.listcontent,{click:true});
+				})
+				return (show1 && this.showen);
+			}
+		},
+		components:{
+			controlcart
+		},
+		methods:{
+			toggelshow(){
+				this.showen = !this.showen;
 			}
 		}
 	}
@@ -121,5 +158,31 @@
 				line-height:50px
 				font-size:13px
 				margin-left:25px
-
+	.shopLists
+		position:absolute
+		bottom:100%
+		background:#fff
+		width:100%
+		max-height:200px
+		font-size:12px
+		z-index:-1
+		overflow:auto
+		.list-title
+			width:100%
+			padding:10px 0
+			background-color:#ccc
+			overflow:hidden
+			.list-left
+				float:left
+				margin-left:15px
+			.list-right
+				float:right
+				margin-right:15px
+				color:blue
+		.lists-content
+			display:flex
+			div
+				flex:1
+				height:40px
+				line-height:40px
 </style>
