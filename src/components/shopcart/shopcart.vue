@@ -18,15 +18,7 @@
 
 <script type="text/ecmascript-6">
 	export default {
-		props:['seller'],
-		data(){
-			return {
-				selectArr:[{
-					count:1,
-					price:10
-				}]
-			}
-		},
+		props:['seller','select-arr'],
 		computed:{
 			totalMoney(){
 				let totalCash = 0;

@@ -27,16 +27,20 @@
 									<div class="prices">
 										<span class="new-pics">￥ {{food.price}}</span>
 										<span class="old-pics" v-show="food.oldPrice">￥ {{food.oldPrice}}</span>
+									<div class="control">
+										<controlcart :food="food"></controlcart>
+									</div>
 									</div>
 								</div>
 							</div>
+							
 						</li>
 					</ul>
 				</li>
 			</ul>
 		</div>
-		<div class="shopcart">
-			<shopcart :seller="seller"></shopcart>
+		<div  class="shopcart">
+			<shopcart :select-arr="goodsArr" :seller="seller"></shopcart>
 		</div>
 	</div>	
 </template>
@@ -44,6 +48,7 @@
 <script type="text/ecmascript-6">
 	import BScroll from 'better-scroll';
 	import shopcart from 'components/shopcart/shopcart';
+	import controlcart from 'components/controlcart/controlcart'
 	export default{
 		data () {
 			return {
@@ -71,6 +76,17 @@
 						return i
 					}
 				}
+			},
+			goodsArr(){
+				let foods=[];
+				this.goods.forEach((good)=>{
+					good.foods.forEach((goodItem)=>{
+						if(goodItem.count){
+							foods.push(goodItem);
+						}
+					})
+				});
+				return foods;
 			}
 		},
 		methods:{
@@ -79,7 +95,8 @@
 					click:true
 				});
 				this.foodsScroll = new BScroll(this.$refs.foodscontent,{
-					probeType:3
+					probeType:3,
+					click:true
 				});
 				this.foodsScroll.on('scroll',(pos)=>{
 					this.scrollY = Math.abs(Math.round(pos.y));
@@ -105,7 +122,8 @@
 			}
 		},
 		components:{
-			shopcart
+			shopcart,
+			controlcart
 		}
 	}
 </script>
@@ -160,6 +178,7 @@
 					font-size:12px	
 				.prices
 					font-size:12px
+					margin-top:5px
 	.current
 		background:#fff;
 	.shopcart
@@ -169,4 +188,7 @@
 		height:50px
 		background:#131d26
 		width:100%
+	.control
+		display:inline-block
+		margin-left:25px
 </style>
