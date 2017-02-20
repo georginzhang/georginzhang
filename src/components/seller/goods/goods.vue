@@ -35,15 +35,11 @@
 				</li>
 			</ul>
 		</div>
-		<div class="shopcart">
-			<shopcart :seller="seller"></shopcart>
-		</div>
 	</div>	
 </template>
 
 <script type="text/ecmascript-6">
 	import BScroll from 'better-scroll';
-	import shopcart from 'components/shopcart/shopcart';
 	export default{
 		data () {
 			return {
@@ -52,7 +48,6 @@
 				scrollY:0
 			}
 		},
-		props:['seller'],
 		created(){
 			this.$http.get('/api/goods').then((res) => {
 				this.goods = res.body.data;
@@ -103,9 +98,6 @@
 				let el = scrollLists[index];
 				this.foodsScroll.scrollToElement(el,300);
 			}
-		},
-		components:{
-			shopcart
 		}
 	}
 </script>
@@ -116,7 +108,7 @@
 		display:flex
 		position:absolute
 		top:147px
-		bottom:52px
+		bottom:47px
 		width:100%
 		overflow:hidden;
 		.menu-content
@@ -162,11 +154,4 @@
 					font-size:12px
 	.current
 		background:#fff;
-	.shopcart
-		position:fixed
-		bottom:0
-		left:0
-		height:50px
-		background:#131d26
-		width:100%
 </style>
