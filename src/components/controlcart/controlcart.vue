@@ -2,34 +2,35 @@
   <div class="control-content">
   	<div class="decrease" @click="decrease($event)" v-show="food.count > 0 "></div>
   	<div class="count" v-show="food.count > 0 ">{{food.count}}</div>
-  	<div class="increase" @click="increase($event)"></div>
+  	<div class="increase" @click.stop="increase($event)"></div>
   </div>
 </template>
 <script type="text/ecmascript-6">
 	import Vue from 'vue';
 	export default {
-		props:['food'],
+		props:{
+			food:{
+				type:Object
+			}
+		},
 		methods:{
 			decrease(event){
-				let food = this.food;
 				if(!event._constructed){
 					return ;
 				}
-				if(food.count){
-					food.count --;
+				if(this.food.count){
+					this.food.count --;
 				}
 			},
 			increase(event){
-				let food = this.food;
-				alert(food.count)
 				if(!event._constructed){
 					return ;
 				}
-				if(!food.count){
-					food.count ==1;
-					Vue.set(food,'count',1);
+				if(!this.food.count){
+					this.food.count ==1;
+					Vue.set(this.food,'count',1);
 				}else{
-					food.count ++;
+					this.food.count ++;
 				}
 			}
 		}

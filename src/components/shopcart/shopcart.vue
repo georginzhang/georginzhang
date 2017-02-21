@@ -72,11 +72,13 @@
 			},
 			listshow(){
 				let show1 = (this.totalCount > 0);
+				return (show1 && this.showen);
+			}
+		},
+		created(){
 				this.$nextTick(()=>{
 					this.scroll = new BScroll(this.$refs.listcontent,{click:true});
 				})
-				return (show1 && this.showen);
-			}
 		},
 		components:{
 			controlcart
